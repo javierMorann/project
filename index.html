@@ -39,32 +39,10 @@
       <div class="row">
       <div class="col-md-6">
           <h1>items in my collection</h1>
-          <table class="table">
-            <thead>
-                <tr>
-                    <th>hobbies</th>
-                    <th>Items</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>My Cameras</td>
-                    <td>Yashica Mat 124, Canon A-1, Mamiya RB67, etc</td>
-                </tr>
-                <tr>
-                    <td>My Comics</td>
-                    <td>Superman, Batman, The Flash, Dracula, etc</td>
-                </tr>
-                <tr>
-                    <td>Vintage Items</td>
-                    <td>VHS, Laserdiscs, NES cartridges, analog cameras, etc.</td>
-                </tr>
-                <tr>
-                    <td>My Books</td>
-                    <td>I Hate Fairyland, The Girl from the Other Side, Monstress, Monster, Saga of Tanya etc</td>
-                </tr>
-            </tbody>
-          </table>
+
+          <input type="text" id="search" placeholder="enter name">
+          <button onclick="searchAuthor()">Search Author</button>
+          
         </div>
 
           <div class="col-md-6">
@@ -90,8 +68,7 @@
            
           }
       </script>
-      <input type="text" id="search" placeholder="enter name">
-      <button onclick="searchAuthor()">Search Author</button>
+     
 
   <hr>
     <p>LAB 3, MARCH 12 2025 -Javier Moran Montalvo</p>
