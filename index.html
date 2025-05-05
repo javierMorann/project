@@ -37,38 +37,35 @@
     </div>
     <div class="container">
       <div class="row">
-      <div class="col-md-6">
+      <div class="col-12">
           <h1>choose from your brain</h1>
 
           <input type="text" id="search" placeholder="enter name">
           <button onclick="searchAuthor()">Search Author</button>
           
+          <div id="showme"></div>
         </div>
 
-          <div class="col-md-6">
-            <img src="https://www.campustimes.org/wp-content/uploads/2022/09/Catherine_xie_hobbies_CT-800x560-c-default.png" alt="hobbies" width="200">
-          </div>
       </div>
     </div>
     <script>
-
-        async function searchAuthor()
+        async function searchAuthor() {
+          const url = 'https://openlibrary.org/search/authors.json?q=' + document.getElementById('search').value;
+          const options =
           {
-           const url = 'https://openlibrary.org/search/authors.json?q='+document.getElementById('search').value;
-           const options =
-              {
-                method: 'GET',
-              };
+             method: 'GET' 
+        };
+          
+          const response = await fetch(url, options);
+          const result = await response.text();
+          const myObj = JSON.parse(result);
       
-           const response = await fetch(url,options);
-           const result = await
-           response.text();
-           const myObj = JSON.parse(result);
-    
-           
-          }
+          const output = document.getElementById('showme');
+          output.innerHTML = '';
+      
+          
+        }
       </script>
-     
 
   <hr>
     <p>PROJECT!!!!, MAY  2025 -Javier Moran Montalvo</p>
