@@ -55,7 +55,7 @@
           {
 
              method: 'GET' 
-             
+
           };
           
           const response = await fetch(url, options);
@@ -71,7 +71,8 @@
           show.innerHTML = `
          <strong>Name:</strong> ${author.name}<br>
          <strong>Top Work:</strong> ${author.top_work || 'N/A'}<br>
-         <strong>Rating:</strong> ${author.ratings_average || 'N/A'}
+         <strong>Rating:</strong> ${author.ratings_average || 'N/A'}<br>
+         <strong>birthday:</strong> ${author.birth_date || 'N/A'}
           `;
           info.appendChild(show);
           }
