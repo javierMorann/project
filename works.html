@@ -55,18 +55,11 @@
          const isbn = document.getElementById("numbs").value;
          const url = `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`;
 
-         const options =
-            {
-              method: 'GET',
-            };
-    
-         const response = await fetch(url,options);
-         const result = await
-         response.text();
-         const myObj = JSON.parse(result);
+         
     
     
          const img = document.createElement("img");
+         img.src = url;
          const pics = document.getElementById("pics");
          pics.innerHTML = ""; 
          pics.appendChild(img);
