@@ -47,6 +47,64 @@
       </div>
     </div>
     
+    <script>
+
+      async function cattsss()
+        {
+         const url = 'https://brianobruno.github.io/cats.json';
+         const options =
+            {
+              method: 'GET',
+            };
+    
+         const response = await fetch(url,options);
+         const result = await
+         response.text();
+         const myObj = JSON.parse(result);
+    
+    
+         
+    
+         myObj.facts.sort((a, b) => a.factId - b.factId);
+         
+         let kittyfat = "";
+         myObj.facts.forEach(fact => {
+          kittyfat += `<tr> <td> ${fact.factId}</td> <td> ${fact.text}</td> </tr>`;
+          });
+           document.getElementById("rowws").innerHTML = kittyfat;
+    
+           document.getElementById("photo?").src = myObj.catPhoto;
+           var newk = document.createElement("img");
+           newk.src = "https://images.pexels.com/photos/2071882/pexels-photo-2071882.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"; 
+           
+           var src = document.getElementById("new");
+           src.appendChild(newk);
+    
+        }
+    </script>
+      <form id= "cattsss">
+      </form>
+      <button onclick="cattsss()">PRESS</button>
+      <div class="container">
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>factID</th>
+                        <th>fact</th>
+                    </tr>
+                </thead>
+                <tbody id ="rowws" ></tbody>
+    
+    
+            </table>
+        </div>
+     </div>
+      <p id="demo"></p>
+      <img id="photo?">
+      <div id="new"></div>
+
+
   <hr>
     <p>PROJECT!!, MAY  2025 -Javier Moran Montalvo</p>
   </body>
