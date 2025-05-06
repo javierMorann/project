@@ -39,7 +39,7 @@
       <div class="col-md-6">
           <h1>choose from your brain or picture!!</h1>
           <input type="text" id="isbnInput" placeholder="enter ISBN">
-          <button onclick="loadCover()">Search Author</button>
+          <button onclick="Covers()">Search ISBN</button>
         </div>
 
           <div class="col-md-6">
@@ -50,9 +50,11 @@
     
     <script>
 
-      async function cattsss()
+      async function Covers()
         {
-         const url = 'https://brianobruno.github.io/cats.json';
+         const isbn = document.getElementById("isbnInput").value;
+         const url = `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`;
+
          const options =
             {
               method: 'GET',
@@ -66,16 +68,9 @@
     
          
     
-         myObj.facts.sort((a, b) => a.factId - b.factId);
+         const img = document.createElement("img");
+         document.getElementById("photo?").src = myObj.catPhoto;
          
-         let kittyfat = "";
-         myObj.facts.forEach(fact => {
-          kittyfat += `<tr> <td> ${fact.factId}</td> <td> ${fact.text}</td> </tr>`;
-          });
-           document.getElementById("rowws").innerHTML = kittyfat;
-    
-           document.getElementById("photo?").src = myObj.catPhoto;
-           var newk = document.createElement("img");
            newk.src = "https://images.pexels.com/photos/2071882/pexels-photo-2071882.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"; 
            
            var src = document.getElementById("new");
