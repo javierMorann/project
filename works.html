@@ -38,12 +38,12 @@
       <div class="row">
       <div class="col-md-6">
           <h1>choose from your brain or picture!!</h1>
-          <input type="text" id="isbnInput" placeholder="enter ISBN">
+          <input type="text" id="numbs" placeholder="enter ISBN">
           <button onclick="Covers()">Search ISBN</button>
         </div>
 
           <div class="col-md-6">
-           
+            <div id="pics"></div>
           </div>
       </div>
     </div>
@@ -52,7 +52,7 @@
 
       async function Covers()
         {
-         const isbn = document.getElementById("isbnInput").value;
+         const isbn = document.getElementById("numbs").value;
          const url = `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`;
 
          const options =
@@ -66,16 +66,10 @@
          const myObj = JSON.parse(result);
     
     
-         
-    
          const img = document.createElement("img");
-         document.getElementById("photo?").src = myObj.catPhoto;
-         
-           newk.src = "https://images.pexels.com/photos/2071882/pexels-photo-2071882.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"; 
-           
-           var src = document.getElementById("new");
-           src.appendChild(newk);
-    
+         const pics = document.getElementById("pics");
+         pics.innerHTML = ""; 
+         pics.appendChild(img);
         }
     </script>
      
