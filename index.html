@@ -66,12 +66,13 @@
     
         const info = document.getElementById('showme');
         info.innerHTML = '';
+
         for (let i = 0; i < myObj.docs.length; i++) {
         const author = myObj.docs[i];
         const show = document.createElement('div');
-        show.className = 'author';
         show.innerHTML = `
-       <strong>Name:</strong> ${author.name}<br>
+
+       <strong>Name:</strong> ${author.name || 'N/A'}<br>
        <strong>Top Work:</strong> ${author.top_work || 'N/A'}<br>
        <strong>Rating:</strong> ${author.ratings_average || 'N/A'}<br>
        <strong>Birthday:</strong> ${author.birth_date || 'N/A'}<br>
