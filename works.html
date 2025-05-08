@@ -39,7 +39,7 @@
       <div class="col-md-6">
           <h1>choose from your brain or picture!!</h1>
           <input type="text" id="numbs" placeholder="enter ISBN">
-          <button onclick="Covers()">Search ISBN</button>
+          <button onclick="Covers()">enter isbn</button>
         </div>
 
           <div class="col-md-6">
@@ -54,15 +54,25 @@
         {
          const isbn = document.getElementById("numbs").value;
          const url = `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`;
-
-         
-    
-    
-         const img = document.createElement("img");
-         img.src = url;
+         const options =
+         {
+          method: 'GET',
+         };
          const pics = document.getElementById("pics");
          pics.innerHTML = ""; 
+
+         const idk = await fetch(url,options);
+          if (!idk.ok) {
+          pics.textContent = "No covers.";
+          return;
+
+          }
+         const img = document.createElement("img");
+         img.src = url;
+         
          pics.appendChild(img);
+
+          
         }
     </script>
      
