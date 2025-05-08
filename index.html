@@ -41,7 +41,7 @@
           <h1>choose from your brain</h1>
 
           <input type="text" id="search" placeholder="enter name">
-          <button onclick="searchAuthor()">Search Author</button>
+          <button onclick="Author()">enter name </button>
           
          
         </div>
@@ -51,7 +51,7 @@
       </div>
     </div>
     <script>
-        async function searchAuthor() {
+        async function Author() {
         const url = 'https://openlibrary.org/search/authors.json?q=' + document.getElementById('search').value;
         const options =
         {
